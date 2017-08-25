@@ -19,3 +19,15 @@ app.factory('myFactory', function() {
     }
   }
 });
+
+
+// $digest() or $apply()
+$scope.$apply() will call the $rootScope and appy the digest cycle across ALL scopes
+$scope.$digest() will call the digest cycle across THIS scope
+
+// digest cycle is the process that is responsible for watching eaching
+// the variables in the scope and when they change call it's watch methods
+
+1. dirty checking of vars if they have changed if not; tries again 
+2. if modifications have been found then fire off watch listeners
+3. Keep note of modifications and call angular to update the DOM

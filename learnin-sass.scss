@@ -1,0 +1,92 @@
+// variables
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+ font: 100% $font-stack;
+ color: $primary-color;
+}
+
+
+// Mixins are used to include a bunch of properties or group declarations together.
+@mixin border-radius($radius) {
+ -webkit-border-radius: $radius;
+ -moz-border-radius: $radius;
+ -ms-border-radius: $radius;
+ border-radius: $radius;
+}
+
+.box { @include border-radius(10px); }
+
+// Nesting is a huge advantage over CSS because it creates a visual hierarchy,
+// similar to what you are used to with HTML. In the examples, you can see how
+// there is less repetition of classes or divs needed since it is now in a cascade
+// approach
+nav {
+   ul {
+     margin: 0;
+     padding: 0;
+     list-style: none;
+   }
+
+   li { display: inline-block; }
+
+   a {
+     display: block;
+     padding: 6px 12px;
+     text-decoration: none;
+   }
+}
+
+// IMPORT - Let says you have a file named _sheet1.scss. In your base.scss you can
+// include it at the top by using the following: @import 'sheet1'; There is no
+// need to have the extension.
+// Variables
+@import 'sheet1'; // file named _sheet1.scss
+
+
+// EXTEND
+// This is another powerful feature. It lets you share properties from one selector to another.
+
+
+
+.message {
+ border: 1px solid #ccc;
+ padding: 10px;
+ color: #333;
+}
+
+.success {
+ @extend .message;
+ border-color: green;
+}
+
+.error {
+ @extend .message;
+ border-color: red;
+}
+
+.warning {
+ @extend .message;
+ border-color: yellow;
+}
+
+
+// calculations
+.container { width: 100%; }
+
+article[role="main"] {
+ float: left;
+ width: 600px / 960px * 100%;
+}
+
+aside[role="complimentary"] {
+   float: right;
+   width: 300px / 960px * 100%;
+}
+
+// Box model
+margin  margin margin margin
+  boarder boarder boarder
+     padding  padding
+          content
