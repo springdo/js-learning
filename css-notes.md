@@ -57,10 +57,9 @@ Indicates an abbr. (hover to see how it works)
 Working much like the abbreviation, but used for things like this TLA.
 ```
 
-
 ##### CSS reset
 Use a css reset to remove browser specific css styling. Handy for backwards compatibility and good to include as a base layer in a style sheet
-CSS reset[https://meyerweb.com/eric/tools/css/reset/]
+[CSS reset](https://meyerweb.com/eric/tools/css/reset/)
 
 ##### CSS specificity
 ```
@@ -68,6 +67,9 @@ element = 1 point
 class   = 100 points
 id      = 1000 points
 ```
+
+##### CSS Pseudo elements
+[atoz-css-pseudo-elements](https://www.sitepoint.com/atoz-css-pseudo-elements/)
 
 ##### CSS floats
 floats were intially created to allow text wrap around images
@@ -108,8 +110,11 @@ to create a classic three column layout using floats::
   margin: 0;
 }
 ```
-but wait! then we cannot add any padding or anything underneath the floats... a few ways to fix this
-1. Use a clear float class and apply it to a div after the columns
+
+But wait! then we cannot add any padding or anything underneath the floats... a few ways to fix this
+
++ Use a clear float class and apply it to a div after the columns
+
 ```
 ....
   <div class="clear"></div>
@@ -120,7 +125,8 @@ but wait! then we cannot add any padding or anything underneath the floats... a 
 }
 ```
 
-2. Use overflow hidden (not it's intended purpose!). Originally used to hide content that spills out of it's container div / element
++ Use overflow hidden (not it's intended purpose!). Originally used to hide content that spills out of it's container div / element
+
 ```
 .secondary-section {
   background-color: blue;
@@ -128,7 +134,9 @@ but wait! then we cannot add any padding or anything underneath the floats... a 
   overflow: hidden;
 }
 ```
-3. Use the micro clear-fix hack! (probs best solution)
+
++ Use the micro clear-fix hack! (probs best solution). Often class is called clear-fix. Just add it to the `section` element after the `secondary-section` class.
+
 ```
 .grouping:before,
 .grouping:after {
