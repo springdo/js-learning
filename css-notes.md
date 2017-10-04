@@ -1,5 +1,7 @@
 # Some notes on CSS from Udemy
 
+##### Random bullets
+
 ```
 width: 1000px
 box-sizing: border-box
@@ -13,7 +15,7 @@ img, iframe, video, object {
 ```
 - Good to set these in base to ensure your media are responsive
 
-- Have a collection of reusable classes stored that can make your css modular. See example `modular-styles.css`
+- Have a collection of reusable classes stored that can make your css modular. See example `modular-styles.css`. Remember if your using `float-right` or `float-left` set the `grouping` class on the section / container class
 
 ##### Common HTML elements that are naturally block-display include:
 ```
@@ -59,22 +61,25 @@ Indicates an abbr. (hover to see how it works)
 Working much like the abbreviation, but used for things like this TLA.
 ```
 
-##### CSS reset
+##### CSS Reset
 Use a css reset to remove browser specific css styling. Handy for backwards compatibility and good to include as a base layer in a style sheet
 [CSS reset](https://meyerweb.com/eric/tools/css/reset/)
 
 ##### CSS specificity
 ```
-element = 1 point
-class   = 100 points
-id      = 1000 points
+universal (*)= 0 point
+element      = 1 point
+class        = 10 points
+id           = 100 points
+inline style = 1000 points
+!important   = 10000 points
 ```
 
 ##### CSS Pseudo elements
 [atoz-css-pseudo-elements](https://www.sitepoint.com/atoz-css-pseudo-elements/)
 
-#### CSS floats
-floats were intially created to allow text wrap around images
+#### CSS Floats and how to FIX them!!
+Floats were intially created to allow text wrap around images
 `float: left | right`
 floats can be cleared with `clear: left | right | both`
 
@@ -151,7 +156,7 @@ But wait! then we cannot add any padding or anything underneath the floats... a 
 ```
 
 #### CSS Buttons
-classic button stylings
+Classic button stylings ...
 ```
 <a href="" class="button">Click me!</a>
 .button {
@@ -163,8 +168,15 @@ classic button stylings
   text-align: center;
   font-weight: bold;
   letter-spacing: 1.5px;
+  transition: 0.25s all ease-in-out;
 }
 
+/* use hover and focus for both mouse in and key tab */
+.button:focus,
+.button:hover {
+  background-color: #333
+  color: #FFF
+}
 
 <a href="" class="button button-narrow">Click me!</a>
 .button-narrow {
@@ -175,5 +187,32 @@ classic button stylings
   border: 2px solid #FFF;
   color: #FFF
 }
+```
+
+#### Transform, Translate & Gradient
+- `transform: scale(x, y)` to make boxes grow bigger / smaller depending on (x, y). Can also `transform: rotate(15deg)` and chain them too!
 
 ```
+.button {
+  transform: scale(0.9, 0.9);
+}
+
+.button:hover {
+  transform: scale(1.1, 1.1);
+}
+```
+
+- `translate: scale(x, y)` to make the box move to the left / right or top / bottom
+
+```
+.button {
+  transform: scale(0.9, 0.9);
+}
+
+.button:hover {
+  transform: scale(1.1, 1.1) translate: scale(0, -5px)
+}
+```
+
+- graient generator
+[colorzilla](www.colorzilla.com/gradient-editor/);
