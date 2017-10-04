@@ -1,4 +1,4 @@
-# Some notes on CSS
+# Some notes on CSS from Udemy
 
 ```
 width: 1000px
@@ -12,6 +12,8 @@ img, iframe, video, object {
 }
 ```
 - Good to set these in base to ensure your media are responsive
+
+- Have a collection of reusable classes stored that can make your css modular. See example `modular-styles.css`
 
 ##### Common HTML elements that are naturally block-display include:
 ```
@@ -71,7 +73,7 @@ id      = 1000 points
 ##### CSS Pseudo elements
 [atoz-css-pseudo-elements](https://www.sitepoint.com/atoz-css-pseudo-elements/)
 
-##### CSS floats
+#### CSS floats
 floats were intially created to allow text wrap around images
 `float: left | right`
 floats can be cleared with `clear: left | right | both`
@@ -146,4 +148,32 @@ But wait! then we cannot add any padding or anything underneath the floats... a 
 .grouping:after {
   clear: both;
 }
+```
+
+#### CSS Buttons
+classic button stylings
+```
+<a href="" class="button">Click me!</a>
+.button {
+  border: 2px solid #333;
+  color: #333
+  padding: 10px 0;
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+
+<a href="" class="button button-narrow">Click me!</a>
+.button-narrow {
+  width: 25%;
+}
+
+.button-alt {
+  border: 2px solid #FFF;
+  color: #FFF
+}
+
 ```
