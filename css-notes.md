@@ -216,3 +216,46 @@ Classic button stylings ...
 
 - graient generator
 [colorzilla](www.colorzilla.com/gradient-editor/);
+
+
+#### Building a Nav bar
+Lists are the way to go!
+
+```
+<nav class="grouping">
+  <figure>
+    <ul class="primary-nav">
+      <li><a href="#">Menu A</a></li>
+      <li><a href="#">Menu B</a></li>
+      <li><a href="#">Menu C</a></li>
+      <li><a href="#">Menu D</a></li>
+    </ul>
+  </figure>
+</nav>
+
+/*nav css*/
+
+/* use `>` to target direct children only (child combinator)*/
+.primary-nav > li{
+  float: left;
+}
+.primary-nav > li > a{
+  padding: 25px 0;
+  width: 150px;
+  border-left: 1px solid #ada791
+
+}
+/* classic selector descendant */
+nav ul li {
+  font-family: Arial, Helvetica, sans-serif;
+  color: blue;
+  text-transform: uppercase;
+  font-size: 150px;
+  text-align: center;
+  transition: 0.15s background-color linear 
+}
+
+
+
+
+```
