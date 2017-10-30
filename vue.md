@@ -2,6 +2,7 @@
 
 #### Common directives
 -  `v-once` to make a directive only load the item in `{{ }}` once and not bind to updates in the changes. Eg:
+
 ```
 JS
 const title = "<p> biscuits</p>"
@@ -11,6 +12,7 @@ HTML
 ```
 
 - `v-html` tells vue js to render html and not escape it  `{{ <p> hello</p> }}` changes. Eg:
+
 ```
 JS
 const hello = "<p> hello</p>"
@@ -20,6 +22,7 @@ HTML
 ```
 
 - `v-html` tells vue js to bind vars in the vue to item in the html attr. ie `{{ thing }}` cannot be used inside a html Attribute. Instead use `v-bind`. Eg:
+
 ```
 <a href="{{ url }}">WILL NOT WORK</a>
 <a v-bind:href="url"> WILL WORK</a>
@@ -40,6 +43,7 @@ HTML
 
 #### Template Expressions
  - This can be used to run JS expressions inside the template. example
+
 ```
   <button v-on:click="counter++">click</a>
   <p> {{ counter }} </p>
@@ -73,7 +77,8 @@ Why use this over the `methods` property? In comparison, a method invocation wil
 - [docs - Computed-vs-Watched](https://vuejs.org/v2/guide/computed.html#Computed-vs-Watched-Property)
 
 #### CSS class manipulation
-- use
+- Some examples
+
 ```
 <div :class="my-color"> </div>
 
@@ -88,14 +93,10 @@ Why use this over the `methods` property? In comparison, a method invocation wil
 <!--  can use strings to call a class directly, no curlys for a model value or curlys for an expression ie class on or off -->
 <div :class="['red-class', myRedDiv, {classOn : booleanOn}]"> STUFF HERE </div>
 
-
 ```
-fn : function(){}
-fn() {}
-
-
 
 - Can use CSS manipulation as `style`, could be useful for creating a progress bar etc. Autoprefixer done by default when using `style` in this way.
+
 ```
 <div :style="{ backgoundColor: color }"> </div>
 <div :style="myStyle"> </div>
@@ -118,14 +119,12 @@ computed:{
 }
 ```
 
-
-
 ### Useful links from VueJS course
 JSFiddle Links:
-[Getting Started](https://jsfiddle.net/smax/pcjtcmdm/)
-[Template Syntax](https://jsfiddle.net/smax/bkk97b7g/)
-[Events](https://jsfiddle.net/smax/7zdak05g/)
-[Two-Way-Binding](https://jsfiddle.net/smax/ut0tsbcu/)
-[Computed Properties & Watch](https://jsfiddle.net/smax/yLjqxmw0/)
-[Dynamic Classes](https://jsfiddle.net/smax/gowg40ym/)
-[Dynamic Styles](https://jsfiddle.net/smax/3rvdLq5y/)
++ [Getting Started](https://jsfiddle.net/smax/pcjtcmdm/)
++ [Template Syntax](https://jsfiddle.net/smax/bkk97b7g/)
++ [Events](https://jsfiddle.net/smax/7zdak05g/)
++ [Two-Way-Binding](https://jsfiddle.net/smax/ut0tsbcu/)
++ [Computed Properties & Watch](https://jsfiddle.net/smax/yLjqxmw0/)
++ [Dynamic Classes](https://jsfiddle.net/smax/gowg40ym/)
++ [Dynamic Styles](https://jsfiddle.net/smax/3rvdLq5y/)
