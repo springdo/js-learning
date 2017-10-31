@@ -28,6 +28,38 @@ HTML
 <a v-bind:href="url"> WILL WORK</a>
 ```
 
+- `v-if="bool"` and `v-else="bool"` or `v-if-else` tells vue js to delete / insert element and nested ones. Eg:
+
+```
+<p v-if="showMe"></p>
+
+<button @click="showMe = !showMe"> show!</button>
+```
+
+- `v-show="bool"` tells vue js to use css to apply `display: none` for the given element. Eg:
+
+```
+<p v-show="showMe"></p>
+
+<button @click="showMe = !showMe"> show!</button>
+```
+
+- `v-for="item in items"` tells vue js to repeat the properties in the array for each node. Eg:
+
+```
+<ul>
+  <li v-for="item in items"> {{ item}} </li>
+</ul>
+```
+
+Finding the current index in the items list. First element is always the content, second is always the index. If looping over an arry of object, the key and index can be extracted using `v-for="(value, key, i) in person"` where each person is an object `{ name: Donal, age: 30}` etc
+
+```
+<ul>
+  <li v-for="(item, i) in items"> {{ item}} {{ i }}</li>
+</ul>
+```
+
 #### Common events
 - `v-on:click` - click handler
 - `v-on:mousemove` - mouse movement
